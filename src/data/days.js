@@ -9,13 +9,13 @@ const DAYS = {
   4: 'T',
   5: 'F',
   6: 'S',
-}
+};
 
 function generateDailyUsage(_, index) {
   const randomKwh = getRandomInRange(0, 20);
   var date = new Date();
-  date.setDate(date.getDate() - index); 
-  
+  date.setDate(date.getDate() - index);
+
   return {
     cost: getEstimatedCostFromKwh(randomKwh),
     kwh: randomKwh,

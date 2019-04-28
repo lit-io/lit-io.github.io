@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import {
   BarChart,
   Bar,
@@ -6,13 +6,13 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
-} from "recharts";
-import cx from "classnames";
-import EnergyBar from "./components/EnergyBar";
-import getRealtimeData from "../../data/realtime";
-import getUsageForDays from "../../data/days";
-import "./style.css";
-import colors from "../../constants/colors";
+} from 'recharts';
+import cx from 'classnames';
+import EnergyBar from './components/EnergyBar';
+import getRealtimeData from '../../data/realtime';
+import getUsageForDays from '../../data/days';
+import './style.css';
+import colors from '../../constants/colors';
 import CustomAxis from './components/CustomAxis';
 
 function useInterval(callback, delay) {
@@ -34,9 +34,9 @@ function useInterval(callback, delay) {
     }
   }, [delay]);
 }
-const formatToUsd = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD"
+const formatToUsd = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
 });
 const daysUsageData = getUsageForDays(7);
 const maxDayUsage = daysUsageData.reduce((largestKwh, day) => {
@@ -65,7 +65,7 @@ export default function CustomShapeBarChart() {
 
   const [currentPriceWhole, currentPriceDecimal] = formatToUsd
     .format(currentEnergyUsage.estimatedCost)
-    .split(".");
+    .split('.');
 
   return (
     <div>
@@ -74,11 +74,11 @@ export default function CustomShapeBarChart() {
         style={{ backgroundColor: colors.GREEN_DARK }}
       >
         <h1
-          className={cx({ "text-align-center": 1, "dashboard-description": 1 })}
+          className={cx({ 'text-align-center': 1, 'dashboard-description': 1 })}
         >
           {"Today's Energy Usage"}
         </h1>
-        <h1 className={cx({ "text-align-center": 1, "current-price": 1 })}>
+        <h1 className={cx({ 'text-align-center': 1, 'current-price': 1 })}>
           <span className="current-price-whole">{currentPriceWhole}</span>
           <span className="current-price-decimal">.{currentPriceDecimal}</span>
         </h1>
@@ -94,7 +94,7 @@ export default function CustomShapeBarChart() {
               dataKey="max"
               fill="#8884d8"
               shape={<EnergyBar isKwhShowing={true} />}
-              label={{ position: "top" }}
+              label={{ position: 'top' }}
             >
               {[currentEnergyUsage].map((entry, index) => (
                 <Cell key={`cell-${index}`} />
@@ -105,35 +105,51 @@ export default function CustomShapeBarChart() {
       </div>
       <div className="dashboard-history">
         <h1
-          className={cx({ "text-align-center": 1, "dashboard-description": 1 })}
+          className={cx({ 'text-align-center': 1, 'dashboard-description': 1 })}
           style={{ color: colors.GREEN_DARK }}
         >
-          {"Past 7 Days"}
+          {'Past 7 Days'}
         </h1>
         <div className="justify-content-center">
-        <div  style={{maxWidth: 600, width: '100%', position: 'relative', left: '-18px'}}>
-        <ResponsiveContainer height={170}>
-          <BarChart
-            barGap={100}
-            barCategoryGap="20%"
-            height={180}
-            data={daysUsageData.map(day => ({ ...day, max: maxDayUsage }))}
-            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          <div
+            style={{
+              maxWidth: 600,
+              width: '100%',
+              position: 'relative',
+              left: '-18px',
+            }}
           >
-            <XAxis stroke={colors.GREEN_DARK} tickLine={false} dataKey="timestamp" tick={CustomAxis} />
-            <YAxis stroke={colors.GREEN_DARK} tickLine={false} tick={CustomAxis} />
-            <Bar
-              dataKey="max"
-              fill="#8884d8"
-              shape={<EnergyBar hasStroke={true} />}
-              label={{ position: "top" }}
-            >
-              {[currentEnergyUsage].map((entry, index) => (
-                <Cell key={`cell-${index}`} />
-              ))}
-            </Bar>
-          </BarChart>
-      </ResponsiveContainer>
+            <ResponsiveContainer height={170}>
+              <BarChart
+                barGap={100}
+                barCategoryGap="20%"
+                height={180}
+                data={daysUsageData.map(day => ({ ...day, max: maxDayUsage }))}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              >
+                <XAxis
+                  stroke={colors.GREEN_DARK}
+                  tickLine={false}
+                  dataKey="timestamp"
+                  tick={CustomAxis}
+                />
+                <YAxis
+                  stroke={colors.GREEN_DARK}
+                  tickLine={false}
+                  tick={CustomAxis}
+                />
+                <Bar
+                  dataKey="max"
+                  fill="#8884d8"
+                  shape={<EnergyBar hasStroke={true} />}
+                  label={{ position: 'top' }}
+                >
+                  {[currentEnergyUsage].map((entry, index) => (
+                    <Cell key={`cell-${index}`} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </div>
       </div>

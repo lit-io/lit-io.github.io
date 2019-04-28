@@ -1,1 +1,1 @@
-export { default } from './CustomAxis'
+export { default } from './CustomAxis';

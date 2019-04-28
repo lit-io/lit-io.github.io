@@ -4,8 +4,8 @@ export const WHITE = '#fff';
 export const BLACK = '#000';
 
 export default {
- GREEN_DARK,
- GREEN_LIGHT,
- WHITE,
- BLACK,
+  GREEN_DARK,
+  GREEN_LIGHT,
+  WHITE,
+  BLACK,
 };

@@ -1,1 +1,1 @@
-export { default } from './EnergyBar'
+export { default } from './EnergyBar';

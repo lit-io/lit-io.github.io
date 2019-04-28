@@ -1,24 +1,19 @@
 import React from 'react';
-import Dash from './components/Dash'
+import Dash from './components/Dash';
 import Header from './components/Header';
-import Splash from './components/Splash/'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-}
-from 'react-router-dom';
+import Splash from './components/Splash/';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default function App(props) {
   return (
     <Router>
-    <div>
-    <Header />
-       <Switch>
-    <Route exact path="/" component={Splash} />
-    <Route path="/dashboard" component={Dash} />
-    </Switch>
-    </div>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Splash} />
+          <Route path="/dashboard" component={Dash} />
+        </Switch>
+      </div>
     </Router>
   );
 }

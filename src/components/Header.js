@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = {
@@ -29,35 +29,28 @@ function Nav(props) {
 
   return (
     <Drawer open={true} onClose={toggleNav}>
-      <div
-        tabIndex={0}
-        role="button"
-        onClick={toggleNav}
-        onKeyDown={toggleNav}
-      >
+      <div tabIndex={0} role="button" onClick={toggleNav} onKeyDown={toggleNav}>
         <div className={classes.list}>
           <List>
-            <Link to="/dashboard" style={{textDecoration: "none"}}>
+            <Link to="/dashboard" style={{ textDecoration: 'none' }}>
               <ListItem button>
-                <ListItemText primary="Dashboard"/>
+                <ListItemText primary="Dashboard" />
               </ListItem>
             </Link>
           </List>
-          
+
           <Divider />
           <List>
-            <Link to="/goals" style={{textDecoration: "none"}}>
+            <Link to="/goals" style={{ textDecoration: 'none' }}>
               <ListItem button>
-               <ListItemText primary="Goals" />
-               
+                <ListItemText primary="Goals" />
               </ListItem>
             </Link>
-            </List>
+          </List>
           <List>
-            <Link to="/badges" style={{textDecoration: "none"}}>
+            <Link to="/badges" style={{ textDecoration: 'none' }}>
               <ListItem button>
                 <ListItemText primary="Badges" />
-    
               </ListItem>
             </Link>
           </List>
@@ -77,7 +70,7 @@ class Header extends PureComponent {
   state = {
     isNavOpen: false,
   };
-  
+
   toggleNav = () => {
     this.setState({
       isNavOpen: !this.state.isNavOpen,
@@ -86,22 +79,34 @@ class Header extends PureComponent {
 
   render() {
     const { classes } = this.props;
-  
+
     return (
       <Fragment>
         <AppBar color="default" position="sticky">
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.toggleNav}>
+            <IconButton
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Menu"
+              onClick={this.toggleNav}
+            >
               <MenuIcon />
             </IconButton>
-            <div className={classes.imageContainer} style={{width: '96px', height: '50px'}}>
-              <img src="logo.png" style={{height: '6em', width: 'auto'}} alt="Logo" />
+            <div
+              className={classes.imageContainer}
+              style={{ width: '96px', height: '50px' }}
+            >
+              <img
+                src="logo.png"
+                style={{ height: '6em', width: 'auto' }}
+                alt="Logo"
+              />
             </div>
             <Button color="inherit">ABOUT</Button>
             <Button color="inherit">LOGOUT</Button>
           </Toolbar>
         </AppBar>
-  
+
         {this.state.isNavOpen && <NavWithStyles toggleNav={this.toggleNav} />}
       </Fragment>
     );
