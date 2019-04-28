@@ -11,35 +11,33 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 
 class AdSpace extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      products: [
-        {
-          name: 'Phillips Hue Lightbulbs',
-          desc: 'Save up to $20 a month*',
-          imgUrl:
-            'https://images-na.ssl-images-amazon.com/images/I/41ZzVX0WpuL.jpg',
-          link: 'https://www2.meethue.com/en-us/bulbs',
-        },
-        {
-          name: 'Nest Thermostat',
-          desc: 'Save up to $145 a year*',
-          imgUrl:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6YeS4FikhiilZtuZf7umopA0DmtJwveez9gX_jVKv1HJd2n87',
-          link: 'https://nest.com/thermostats/',
-        },
-        {
-          name: 'Energy Star Refrigerator',
-          desc: 'Save $300 over 5 years*',
-          imgUrl:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdpNvzey5rP6umCujtLYxLOx7kY2i_I_HLQ4WcLJ4ngz9DRej2',
-          link:
-            'https://www.lg.com/us/refrigerators/lg-LFXS24623S-french-3-door-refrigerator',
-        },
-      ],
-    };
-  }
+  state = {
+    products: [
+      {
+        name: 'Phillips Hue Lightbulbs',
+        desc: 'Save up to $20 a month*',
+        imgUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/41ZzVX0WpuL.jpg',
+        link: 'https://www2.meethue.com/en-us/bulbs',
+      },
+      {
+        name: 'Nest Thermostat',
+        desc: 'Save up to $145 a year*',
+        imgUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6YeS4FikhiilZtuZf7umopA0DmtJwveez9gX_jVKv1HJd2n87',
+        link: 'https://nest.com/thermostats/',
+      },
+      {
+        name: 'Energy Star Refrigerator',
+        desc: 'Save $300 over 5 years*',
+        imgUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdpNvzey5rP6umCujtLYxLOx7kY2i_I_HLQ4WcLJ4ngz9DRej2',
+        link:
+          'https://www.lg.com/us/refrigerators/lg-LFXS24623S-french-3-door-refrigerator',
+      },
+    ],
+  };
+
   render() {
     return (
       <div className="ad-toggle">
@@ -107,6 +105,7 @@ class AdSpace extends Component {
                               size="small"
                               color="primary"
                               style={{ paddingTop: '6px' }}
+                              target="_blank"
                             >
                               Buy Now
                             </Button>
