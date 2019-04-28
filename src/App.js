@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import AdSpace from './components/AdSpace';
+import Dashboard from './components/Dashboard/';
+import Dash from './components/Dash'
+import Header from './components/Header';
+import Splash from './components/Splash/'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+}
+from 'react-router-dom';
+export default function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div>
+    <Header />
+       <Switch>
+    <Route exact path="/" component={Splash} />
+    <Route path="/dashboard" component={Dash} />
+    </Switch>
     </div>
+    </Router>
   );
 }
-
-export default App;

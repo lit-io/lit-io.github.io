@@ -1,0 +1,36 @@
+.dashboard-today {
+  padding: 16px 0;
+  color: white;
+}
+
+.dashboard-today tspan, .dashboard-history tspan {
+  display: none;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.current-price {
+  color:white;
+}
+
+.current-price-whole {
+  font-size: 60px;
+}
+.current-price-decimal {
+  vertical-align: top;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.dashboard-description {
+  padding: 16px;
+  font-size: 26px;
+}

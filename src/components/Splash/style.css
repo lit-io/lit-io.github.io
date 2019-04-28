@@ -1,0 +1,38 @@
+.home-text{
+  padding: 20px;
+    color: #45c65a;
+}
+.sub-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  
+}
+.home-div{
+  
+  padding:20px;
+
+}
+
+p {
+  font-size: 20pt;
+  
+}
+
+
+#title {
+  display: flex;
+  font-size: 30pt;
+  color:#45c65a;
+  padding: 20px;
+  justify-content: center;
+  
+}
+
+
+
+img {
+  height: 200px;
+  width: auto;
+}
