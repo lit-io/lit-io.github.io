@@ -123,7 +123,7 @@ function Nav(props) {
 
 const NavWithStyles = withStyles({
   list: {
-    width: 200,
+    width: 210,
   },
 })(Nav);
 
@@ -157,7 +157,7 @@ class Header extends PureComponent {
               className={classes.imageContainer}
               style={{ width: '96px', height: '50px' }}
             >
-              <Link to="/">
+              <Link to="/dashboard">
                 <img
                   src="logo.png"
                   style={{ height: '6em', width: 'auto' }}
