@@ -3,12 +3,9 @@ import {
   BarChart,
   Bar,
   Cell,
-  LineChart,
-  Line,
-  CartesianGrid,
+  ResponsiveContainer,
   XAxis,
   YAxis,
-  Tooltip
 } from "recharts";
 import cx from "classnames";
 import EnergyBar from "./components/EnergyBar";
@@ -16,7 +13,7 @@ import getRealtimeData from "../../data/realtime";
 import getUsageForDays from "../../data/days";
 import "./style.css";
 import colors from "../../constants/colors";
-import CustomAxis from './components/CustomAxis'
+import CustomAxis from './components/CustomAxis';
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -114,16 +111,17 @@ export default function CustomShapeBarChart() {
           {"Past 7 Days"}
         </h1>
         <div className="justify-content-center">
+        <div  style={{maxWidth: 600, width: '100%', position: 'relative', left: '-18px'}}>
+        <ResponsiveContainer height={170}>
           <BarChart
             barGap={100}
             barCategoryGap="20%"
-            width={400}
             height={180}
             data={daysUsageData.map(day => ({ ...day, max: maxDayUsage }))}
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
           >
-            <XAxis tickLine={false} dataKey="timestamp" tick={CustomAxis} />
-            <YAxis tickLine={false} tick={CustomAxis} />
+            <XAxis stroke={colors.GREEN_DARK} tickLine={false} dataKey="timestamp" tick={CustomAxis} />
+            <YAxis stroke={colors.GREEN_DARK} tickLine={false} tick={CustomAxis} />
             <Bar
               dataKey="max"
               fill="#8884d8"
@@ -135,6 +133,8 @@ export default function CustomShapeBarChart() {
               ))}
             </Bar>
           </BarChart>
+      </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </div>

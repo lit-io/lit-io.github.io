@@ -1,8 +1,6 @@
 import React, { Fragment, PureComponent } from 'react';
-import cx from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -10,13 +8,9 @@ import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItem';
 import IconButton from '@material-ui/core/IconButton';
 import {Link} from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
-import MailIcon from '@material-ui/icons/Mail';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import InboxIcon from '@material-ui/icons/Inbox';
 
 const styles = {
   imageContainer: {
@@ -29,8 +23,6 @@ const styles = {
     marginRight: 20,
   },
 };
-
-
 
 function Nav(props) {
   const { classes, toggleNav } = props;
@@ -103,7 +95,7 @@ class Header extends PureComponent {
               <MenuIcon />
             </IconButton>
             <div className={classes.imageContainer} style={{width: '96px', height: '50px'}}>
-              <img src='https://trello-attachments.s3.amazonaws.com/5cc3b3ab05f0502203b2d3b1/5cc4daf6f7ece274d9dd1093/8e95c51d8188908f75289f9a59fad871/Litio_logo.png' style={{height: '6em', width: 'auto'}} />
+              <img src="logo.png" style={{height: '6em', width: 'auto'}} alt="Logo" />
             </div>
             <Button color="inherit">ABOUT</Button>
             <Button color="inherit">LOGOUT</Button>
