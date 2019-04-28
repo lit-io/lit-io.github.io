@@ -1,4 +1,5 @@
 import React, { Fragment, PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
@@ -9,7 +10,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = {
@@ -96,14 +96,16 @@ class Header extends PureComponent {
               className={classes.imageContainer}
               style={{ width: '96px', height: '50px' }}
             >
+              <Link to="/">
               <img
                 src="logo.png"
                 style={{ height: '6em', width: 'auto' }}
                 alt="Logo"
               />
+              </Link>
             </div>
-            <Button color="inherit">ABOUT</Button>
-            <Button color="inherit">LOGOUT</Button>
+            <Button color="inherit" component={Link} to="/">ABOUT</Button>
+            <Button color="inherit" component={Link} to="#">LOGOUT</Button>
           </Toolbar>
         </AppBar>
 
