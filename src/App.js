@@ -10,7 +10,6 @@ export default function App(props) {
       <div>
         <Header />
         <Route path="/" component={Dash} />
-        <Route path="/dashboard" component={Dash} />
       </div>
     </Router>
   );
