@@ -9,10 +9,8 @@ export default function App(props) {
     <Router>
       <div>
         <Header />
-        <Switch>
-          <Route exact path="/lit.io/" component={Dash} />
-          <Route path="/dashboard" component={Dash} />
-        </Switch>
+        <Route exact path="/" component={Dash} />
+        <Route path="/dashboard" component={Dash} />
       </div>
     </Router>
   );
