@@ -9,7 +9,7 @@ export default function App(props) {
     <Router>
       <div>
         <Header />
-        <Route exact path="/" component={Dash} />
+        <Route path="/" component={Dash} />
         <Route path="/dashboard" component={Dash} />
       </div>
     </Router>
