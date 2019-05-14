@@ -2,10 +2,9 @@
   "name": "lit.io",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://lit-io.github.io/lit.io",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "clean": "rm -rf build",
+    "deploy": "npm run clean && npm run build && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
