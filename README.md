@@ -6,7 +6,15 @@
 
 [Lit.io](https://lit-io.github.io/) is a hackathon project developed during [HackFest 2019](https://hackfest.nyc/). Read more about the experience [here](https://uxdesign.cc/lit-io-a-retelling-of-my-first-hackathon-experience-3e5505f3a8bb).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built with:
+
+- [Create React App](https://facebook.github.io/create-react-app/)
+- [Material-UI](https://material-ui.com/)
+
+## Prerequisites
+
+- [Node.js 8+](https://nodejs.org/en/download/)
+- [npm 5.3+](https://www.npmjs.com/get-npm) or [Yarn 1+](https://yarnpkg.com/en/docs/install)
 
 ## Install
 
