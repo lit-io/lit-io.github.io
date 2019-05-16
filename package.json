@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "clean": "rm -rf build",
-    "deploy": "npm run clean && npm run build && gh-pages -d build",
+    "clean": "rm -rf build && gh-pages-clean",
+    "deploy": "npm run clean && npm run build && gh-pages --dist build --branch master",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
